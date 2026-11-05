@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Galeri EcoBriq: dokumentasi bahan baku, proses pengolahan, dan hasil briket dari limbah baglog jamur."
+    >
+    <title>Galeri | EcoBriq</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .gallery-card img {
+            display: block;
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .gallery-card-content {
+            padding: 20px;
+        }
+
+        .gallery-card h3 {
+            margin-top: 0;
+        }
+
+        .gallery-note {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #eaf5e8;
+        }
+
+        .gallery-note h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🌱 EcoBriq</a>
+
+        <nav aria-label="Navigasi utama">
+            <a href="../index.html">Beranda</a>
+            <a href="../index.html#artikel">Artikel</a>
+            <a href="bahan.html">Bahan</a>
+            <a href="proses.html">Proses</a>
+            <a href="../index.html#manfaat">Manfaat</a>
+            <a href="harga.html">Harga</a>
+            <a href="galeri.html" aria-current="page">Galeri</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="label">📸 GALERI KEGIATAN</span>
+                <h1>Melihat Perjalanan <span>EcoBriq.</span></h1>
+                <p>
+                    Galeri ini menampilkan bahan baku, proses pengolahan,
+                    dan hasil briket dari pemanfaatan limbah baglog jamur.
+                </p>
+                <a href="../index.html" class="btn-primary">Kembali ke Beranda ↗</a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=85"
+                    alt="Ilustrasi energi dan lingkungan"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+        </section>
+
+        <section class="container" aria-labelledby="gallery-title">
+            <div class="intro">
+                <div>
+                    <span class="section-label">DOKUMENTASI PRODUK</span>
+                    <h2 id="gallery-title">Galeri EcoBriq</h2>
+                </div>
+                <p>
+                    Gambar berikut merupakan ilustrasi awal. Ganti dengan foto
+                    kegiatan dan produk EcoBriq sendiri agar dokumentasi lebih akurat.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=700&q=80"
+                        alt="Ilustrasi bahan alami"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="gallery-card-content">
+                        <h3>01. Bahan Baku</h3>
+                        <p>
+                            Mengenal sisa media budidaya jamur yang berpotensi
+                            dimanfaatkan kembali.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80"
+                        alt="Ilustrasi kegiatan pengolahan"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="gallery-card-content">
+                        <h3>02. Proses Pengolahan</h3>
+                        <p>
+                            Dokumentasi persiapan bahan, pencampuran,
+                            dan pencetakan briket.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=700&q=80"
+                        alt="Ilustrasi energi dan bahan bakar"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <div class="gallery-card-content">
+                        <h3>03. Hasil Produk</h3>
+                        <p>
+                            Tempat untuk menampilkan foto briket yang sudah
+                            dibuat dan diuji.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="gallery-note">
+                <h3>🌱 Tambahkan Dokumentasi Sendiri</h3>
+                <p>
+                    Ambil foto baglog bekas, proses pembuatan, alat yang
+                    digunakan, dan hasil briket. Foto asli akan membuat galeri
+                    lebih sesuai dengan kegiatan EcoBriq.
+                </p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="../index.html" class="logo">🌱 EcoBriq</a>
+        <p>Informasi dan promosi pemanfaatan limbah baglog jamur.</p>
+        <small>© 2026 EcoBriq. Inovasi untuk keberlanjutan.</small>
+    </footer>
+</body>
+</html>
