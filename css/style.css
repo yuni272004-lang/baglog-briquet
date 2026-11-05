@@ -926,3 +926,31 @@ body main,body.home-page main,body:not(.home-page) .article-page{width:94%;margi
 .shop-tiles small,.newsletter small {
     color: #e0e0e0;
 }
+
+/* ===== Baseline quality, accessibility, and responsive safeguards ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; font-family: Arial, Helvetica, sans-serif; }
+img, video { max-width: 100%; height: auto; }
+a { text-underline-offset: .18em; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #f0c6a8;
+    outline-offset: 3px;
+}
+button, input, textarea, select { font: inherit; }
+p, li { overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+@media (max-width: 480px) {
+    body { overflow-wrap: break-word; }
+    .navbar, .navbar.home-nav { padding: 14px 16px; }
+    main, body.home-page main, body:not(.home-page) .article-page { width: 100%; }
+}
