@@ -956,6 +956,12 @@ p, li { overflow-wrap: anywhere; }
 }
 
 
+/* Samakan font di seluruh halaman, termasuk elemen pseudo dan kontrol form */
+*, *::before, *::after,
+button, input, textarea, select {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
 /* CTA pemesanan WhatsApp: kontras tinggi dan mudah ditemukan */
 .btn-whatsapp {
     display: inline-flex;
