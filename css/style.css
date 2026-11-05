@@ -954,3 +954,48 @@ p, li { overflow-wrap: anywhere; }
     .navbar, .navbar.home-nav { padding: 14px 16px; }
     main, body.home-page main, body:not(.home-page) .article-page { width: 100%; }
 }
+
+
+/* CTA pemesanan WhatsApp: kontras tinggi dan mudah ditemukan */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 16px 24px;
+    border: 2px solid #128c4a;
+    border-radius: 999px;
+    background: #18a957;
+    color: #fff !important;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(18, 140, 74, .28);
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.btn-whatsapp:hover {
+    background: #128c4a;
+    box-shadow: 0 10px 26px rgba(18, 140, 74, .36);
+    transform: translateY(-2px);
+}
+.btn-whatsapp:focus-visible { outline-color: #128c4a; }
+.shop-order-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 22px 0 28px;
+    padding: 22px 26px;
+    border: 1px solid #d5e8da;
+    border-radius: 18px;
+    background: #f0f8f2;
+}
+.shop-order-cta div { display: grid; gap: 5px; }
+.shop-order-cta strong { color: #173e29; font-size: 1.15rem; }
+.shop-order-cta span { color: #385a45; }
+@media (max-width: 600px) {
+    .shop-order-cta { align-items: stretch; flex-direction: column; padding: 20px; }
+    .shop-order-cta .btn-whatsapp { width: 100%; }
+}
