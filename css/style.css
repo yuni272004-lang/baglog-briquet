@@ -1005,3 +1005,9 @@ button, input, textarea, select {
     .shop-order-cta { align-items: stretch; flex-direction: column; padding: 20px; }
     .shop-order-cta .btn-whatsapp { width: 100%; }
 }
+
+
+/* Kontras teks pada empat poin layanan di beranda */
+.home-page .service-strip strong {
+    color: #000;
+}
