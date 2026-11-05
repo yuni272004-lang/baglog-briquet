@@ -904,3 +904,25 @@ body main,body.home-page main,body:not(.home-page) .article-page{width:94%;margi
 .process-steps{padding:18px 5% 48px}.process-banner,.product-banner{margin:0 5% 42px;border-radius:8px}.process-banner{background:#343a34}.product-banner,.story-banner{background:#38332f}.benefit-section{padding:10px 5% 48px}.shop-section,.occasion-section{padding:30px 5% 18px}.story-banner{margin:0 5% 18px;border:1px solid #45413e}.story-copy h2,.story-copy p{color:#f5f1ec}.occasion-links a{color:#d9bca7;border-color:#45413e}.newsletter{background:#303030;color:#f5f1ec}.newsletter small{color:#c5beb7}
 .article-page{padding:clamp(24px,5vw,60px)}.article-page h1,.article-page h2,.article-page p,.article-page li{color:#f5f1ec}.article-page .article-meta,.article-page .back-link{color:#d9bca7}.footer,body.home-page .footer{background:#1b1b1b;color:#f5f1ec}.footer p,.footer small{color:#c5beb7}
 @media(max-width:700px){.hero,.shop-hero{padding:30px 22px}.article-grid,.benefit-grid,.shop-tiles{grid-template-columns:1fr}.process-banner,.product-banner{margin:0 18px 28px;padding:24px}.intro{display:block;padding:30px 22px 18px}.intro>p{margin-top:12px}.story-banner{margin:0 18px 18px;grid-template-columns:1fr}.shop-section,.occasion-section{padding:24px 22px 16px}}
+
+/* Perbaikan kontras teks pada bagian "Jelajahi Informasi" dan kartu */
+.intro h2,.intro h2 span,.intro .section-label,
+.article-grid .article-card h3,.article-grid .article-card p,
+.article-grid .article-card .category,.article-grid .article-card a,
+.benefit-section h2,.benefit-grid h3,.benefit-grid p,
+.process-steps h2,.process-step h3,.process-step p,
+.shop-section h2,.shop-tiles b,.shop-tiles small,
+.occasion-section h2,.occasion-links b,
+.latest h2,.latest-cards a,.newsletter strong,.newsletter small {
+    color: #ffffff;
+}
+.article-grid .article-card .category,
+.article-grid .article-card a,
+.intro .section-label,
+.shop-kicker,.occasion-links a {
+    color: #f0c6a8;
+}
+.article-grid .article-card p,.benefit-grid p,.process-step p,
+.shop-tiles small,.newsletter small {
+    color: #e0e0e0;
+}
