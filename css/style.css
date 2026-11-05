@@ -744,3 +744,37 @@ img {
 .home-page .footer{background:#8f2f08;color:#fff}.home-page .footer .logo{color:#fff}
 @media(max-width:800px){.home-nav{flex-wrap:wrap;justify-content:center}.home-nav nav{order:3;flex-wrap:wrap;justify-content:center}.shop-hero{grid-template-columns:1fr;padding:35px 6%;gap:25px}.shop-hero-photo{height:300px}.service-strip{grid-template-columns:repeat(2,1fr)}.service-strip>div:nth-child(2){border:0}.shop-tiles{grid-template-columns:repeat(2,1fr)}.story-banner{grid-template-columns:1fr}.story-banner>img{max-height:220px}.latest-cards{grid-template-columns:1fr}}
 @media(max-width:480px){.service-strip{margin-left:3%;margin-right:3%;padding:12px 8px}.service-strip>div{padding:8px 5px}.service-strip strong{font-size:8px}.service-strip small{font-size:8px}.shop-tiles img{height:120px}.occasion-links b{font-size:7px}.newsletter{align-items:flex-start;flex-direction:column}.shop-hero h1{font-size:38px}}
+
+
+/* ===== SISTEM DESAIN ECOBRIQ UNTUK SEMUA HALAMAN ===== */
+:root{
+ --green:#285238;--green-dark:#183b28;--green-light:#e7efe2;
+ --cream:#f8f1e8;--text:#30271f;--muted:#78685b;--white:#fffaf5;
+}
+body{background:var(--cream);color:var(--text)}
+.navbar{background:#8b350f;color:#fff;border-bottom:0;padding:18px 5%}
+.navbar .logo,.footer .logo{color:#fff}
+.navbar nav a{color:#fff;font-size:12px;letter-spacing:.25px}
+.navbar nav a:hover,.navbar nav a.active{color:#ffd6b8}
+.hero{background:#8b350f;color:#fff;padding:58px 6%;gap:42px}
+.hero .label,.hero .section-label{color:#f6c8a8}
+.hero h1 span{color:#ffd3b3}
+.hero-content>p{color:#f8e2d3}
+.hero-image>img{border-radius:4px;box-shadow:none}
+.image-caption{background:#fff0e4;color:#39291f;border-radius:4px}
+.btn-primary{background:#285238;color:#fff;border-radius:5px}
+.btn-secondary{background:#ffe1ca;color:#422b1c;border:0;border-radius:5px}
+.intro{padding-top:48px}
+.intro h2,.benefit-section>h2{font-family:Georgia,serif;color:#34251c}
+.article-card{background:#f4e1d2;border:0;border-radius:8px;box-shadow:none}
+.article-icon{background:#e8cdb7;border-radius:8px}
+.article-card h3{font-family:Georgia,serif}
+.article-card> a{color:#8b4a25}
+.process-banner{background:#294b31;border-radius:8px}
+.product-banner{background:#f3d9c4;border-radius:8px}
+.product-banner h2{color:#34251c}
+.product-banner p{color:#78685b}
+.btn-light{background:#285238;border-radius:5px}
+.benefit-grid>div{background:#f0dfd0;border-radius:8px}
+.footer{background:#7d2f0c}
+@media(max-width:600px){.navbar{padding:16px 5%}.hero{padding:38px 5%}}
