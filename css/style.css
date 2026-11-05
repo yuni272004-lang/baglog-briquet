@@ -792,3 +792,103 @@ body{background:var(--cream);color:var(--text)}
 body h1,body h2,body h3,.logo {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ===== TEMA EDITORIAL GELAP UNTUK SELURUH HALAMAN HTML ===== */
+body:not(.home-page) {
+    background: #ece9e4;
+    color: #f5f1ec;
+}
+body:not(.home-page) .navbar {
+    margin: 18px auto 0;
+    width: min(1200px, 94%);
+    padding: 18px 24px;
+    background: #242424;
+    border: 0;
+    border-radius: 12px 12px 0 0;
+    color: #f5f1ec;
+}
+body:not(.home-page) .navbar .logo,
+body:not(.home-page) .footer .logo { color: #f5f1ec; }
+body:not(.home-page) .navbar nav a,
+body:not(.home-page) .navbar > a:not(.logo) { color: #d8d2cb; }
+body:not(.home-page) .navbar nav a:hover,
+body:not(.home-page) .navbar nav a.active { color: #d9bca7; }
+body:not(.home-page) main,
+body:not(.home-page) .article-page {
+    width: min(1200px, 94%);
+    margin: 0 auto;
+    background: #242424;
+    color: #f5f1ec;
+    overflow: hidden;
+}
+body:not(.home-page) .hero {
+    background: #242424;
+    color: #f5f1ec;
+    padding: clamp(28px, 5vw, 64px);
+    gap: clamp(24px, 4vw, 56px);
+}
+body:not(.home-page) .hero h1,
+body:not(.home-page) .intro h2,
+body:not(.home-page) .benefit-section > h2,
+body:not(.home-page) .article-card h3,
+body:not(.home-page) .process-step h3,
+body:not(.home-page) .process-banner h2,
+body:not(.home-page) .product-banner h2 { color: #f5f1ec; }
+body:not(.home-page) .hero h1 span { color: #d9bca7; }
+body:not(.home-page) .hero-content > p,
+body:not(.home-page) .intro > p,
+body:not(.home-page) .article-card p,
+body:not(.home-page) .process-step p,
+body:not(.home-page) .product-banner p { color: #c5beb7; }
+body:not(.home-page) .section-label,
+body:not(.home-page) .label { color: #d9bca7; }
+body:not(.home-page) .hero-image > img { border-radius: 8px; }
+body:not(.home-page) .intro {
+    padding: 42px clamp(24px, 5vw, 60px) 22px;
+}
+body:not(.home-page) .article-grid {
+    padding: 18px clamp(24px, 5vw, 60px) 48px;
+    gap: 16px;
+}
+body:not(.home-page) .article-card,
+body:not(.home-page) .process-step,
+body:not(.home-page) .benefit-grid > div {
+    background: #303030;
+    color: #f5f1ec;
+    border: 1px solid #45413e;
+    border-radius: 8px;
+}
+body:not(.home-page) .article-icon { background: #45413e; }
+body:not(.home-page) .article-card > a { color: #e2bfa7; }
+body:not(.home-page) .process-steps { padding: 18px clamp(24px, 5vw, 60px) 48px; }
+body:not(.home-page) .process-banner,
+body:not(.home-page) .product-banner {
+    margin: 0 clamp(24px, 5vw, 60px) 42px;
+    border-radius: 8px;
+}
+body:not(.home-page) .product-banner { background: #38332f; }
+body:not(.home-page) .process-banner { background: #343a34; }
+body:not(.home-page) .btn-primary,
+body:not(.home-page) .btn-light { background: #d9bca7; color: #242424; }
+body:not(.home-page) .btn-secondary { background: #3a3734; color: #f5f1ec; border-color: #514b46; }
+body:not(.home-page) .article-page { padding: clamp(24px, 5vw, 60px); }
+body:not(.home-page) .article-page h1,
+body:not(.home-page) .article-page h2,
+body:not(.home-page) .article-page p,
+body:not(.home-page) .article-page li { color: #f5f1ec; }
+body:not(.home-page) .article-page .article-meta,
+body:not(.home-page) .article-page .back-link { color: #d9bca7; }
+body:not(.home-page) .contact-card,
+body:not(.home-page) .contact-note { background: #303030; color: #f5f1ec; border-color: #45413e; }
+body:not(.home-page) .footer { background: #1b1b1b; }
+body:not(.home-page) * { font-family: Arial, Helvetica, sans-serif; }
+@media (max-width: 700px) {
+    body:not(.home-page) .navbar { border-radius: 10px 10px 0 0; }
+    body:not(.home-page) .hero { padding: 30px 22px; }
+    body:not(.home-page) .article-grid { grid-template-columns: 1fr; }
+    body:not(.home-page) .process-banner,
+    body:not(.home-page) .product-banner { margin: 0 18px 28px; padding: 24px; }
+    body:not(.home-page) .intro { display: block; padding: 30px 22px 18px; }
+    body:not(.home-page) .intro > p { margin-top: 12px; }
+}
