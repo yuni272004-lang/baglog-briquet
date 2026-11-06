@@ -135,6 +135,8 @@
 </main>
 <footer class="footer"><a href="#beranda" class="logo">🌱 EcoBriq</a><p>Informasi dan edukasi pemanfaatan limbah baglog jamur.</p><small>© 2026 EcoBriq · Inovasi berkelanjutan</small></footer>
 
+  <button class="back-to-top" type="button" aria-label="Kembali ke bagian atas halaman" title="Kembali ke atas" hidden>↑</button>
+
 <script>
 (() => {
   const nav = document.querySelector('.home-nav nav');
@@ -188,8 +190,28 @@
     lightbox.addEventListener('close', () => { preview.removeAttribute('src'); });
   }
 
-  // Animasi reveal tidak menghalangi navigasi atau konten saat gerakan dikurangi.
+  // Tombol kembali ke atas hanya tampil setelah hero terlewati.
+  const backToTop = document.querySelector('.back-to-top');
+  const heroSection = document.querySelector('.single-hero');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (backToTop && heroSection && 'IntersectionObserver' in window) {
+    const topButtonObserver = new IntersectionObserver(([entry]) => {
+      backToTop.hidden = entry.isIntersecting;
+    }, { threshold: 0 });
+    topButtonObserver.observe(heroSection);
+  } else if (backToTop) {
+    backToTop.hidden = window.scrollY < 400;
+    window.addEventListener('scroll', () => {
+      backToTop.hidden = window.scrollY < 400;
+    }, { passive: true });
+  }
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  // Animasi reveal tidak menghalangi navigasi atau konten saat gerakan dikurangi.
   if (reduceMotion || !('IntersectionObserver' in window)) return;
 
   const revealItems = document.querySelectorAll(
