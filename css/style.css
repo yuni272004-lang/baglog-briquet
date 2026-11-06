@@ -1072,3 +1072,76 @@ button, input, textarea, select {
 .single-page .program-note { max-width:920px; margin:22px auto 0; padding:16px 18px; border-left:4px solid #d9bca7; background:#38332f; color:#ddd2c9; font-size:13px; }
 .single-page .program-note strong { color:#f0c6a8; }
 @media(max-width:800px) { .single-page .program-grid { grid-template-columns:1fr; } }
+
+
+/* ===== TRANSISI HALUS & ANIMASI SAAT SCROLL ===== */
+.single-page {
+    scroll-behavior: smooth;
+}
+.single-page .home-nav {
+    transition: background-color .3s ease, box-shadow .3s ease;
+}
+.single-page .home-nav nav a {
+    position: relative;
+    transition: color .25s ease, opacity .25s ease;
+}
+.single-page .home-nav nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -6px;
+    height: 2px;
+    background: #f0c6a8;
+    transition: right .28s ease;
+}
+.single-page .home-nav nav a:hover::after,
+.single-page .home-nav nav a:focus-visible::after {
+    right: 0;
+}
+.single-page .shop-button,
+.single-page .single-cards article,
+.single-page .program-card,
+.single-page .single-gallery figure,
+.single-page .catalog-card,
+.single-page .developer-card,
+.single-page .btn-whatsapp {
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+}
+.single-page .shop-button:hover,
+.single-page .btn-whatsapp:hover {
+    transform: translateY(-3px);
+}
+.single-page .single-cards article:hover,
+.single-page .program-card:hover,
+.single-page .single-gallery figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.2);
+}
+.single-page .single-gallery img {
+    transition: transform .55s ease;
+}
+.single-page .single-gallery figure:hover img {
+    transform: scale(1.045);
+}
+.single-page .reveal-ready {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.single-page .reveal-ready.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.single-page .single-cards article:nth-child(2),
+.single-page .program-card:nth-child(2) { transition-delay: .08s; }
+.single-page .single-cards article:nth-child(3),
+.single-page .program-card:nth-child(3) { transition-delay: .16s; }
+@media (prefers-reduced-motion: reduce) {
+    .single-page *, .single-page *::before, .single-page *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
