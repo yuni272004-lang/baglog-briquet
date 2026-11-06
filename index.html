@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home-page single-page">
+<a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
 <header class="navbar home-nav">
   <a class="logo" href="#beranda" aria-label="EcoBriq, ke beranda">🌱 EcoBriq</a>
   <nav aria-label="Navigasi utama">
     <a href="#produk">Produk</a><a href="#dampak">Dampak</a><a href="#program">Program KKN</a><a href="#tutorial">Tutorial</a><a href="#katalog">Katalog</a><a href="#galeri">Galeri</a><a href="#pengembang">Pengembang</a>
   </nav>
 </header>
-<main>
+<main id="konten-utama" tabindex="-1">
   <section class="shop-hero single-hero" id="beranda">
     <div class="shop-hero-copy">
       <span class="shop-kicker">PEMANFAATAN LIMBAH · INOVASI BERKELANJUTAN</span>
@@ -94,6 +95,33 @@
 
 <script>
 (() => {
+  const nav = document.querySelector('.home-nav nav');
+  const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  // Tandai bagian yang sedang dibaca pada navigasi utama.
+  if ('IntersectionObserver' in window && navLinks.length && sections.length) {
+    const linkById = new Map(navLinks.map((link) => [link.hash.slice(1), link]));
+    const activeObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      navLinks.forEach((link) => {
+        const isActive = link === linkById.get(visible.target.id);
+        link.classList.toggle('active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-18% 0px -65% 0px', threshold: [0, 0.15, 0.35, 0.6] });
+
+    sections.forEach((section) => activeObserver.observe(section));
+  }
+
+  // Animasi reveal tidak menghalangi navigasi atau konten saat gerakan dikurangi.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion || !('IntersectionObserver' in window)) return;
 
@@ -103,7 +131,7 @@
 
   revealItems.forEach((item) => item.classList.add('reveal-ready'));
 
-  const observer = new IntersectionObserver((entries, currentObserver) => {
+  const revealObserver = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
@@ -111,7 +139,7 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
 
-  revealItems.forEach((item) => observer.observe(item));
+  revealItems.forEach((item) => revealObserver.observe(item));
 })();
 </script>
 
