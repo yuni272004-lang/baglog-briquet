@@ -1743,3 +1743,111 @@ button, input, textarea, select {
     }
 }
 
+
+
+/* ===== HERO PHOTO ECOBRIQ: FINISH EDITORIAL & AESTETIS ===== */
+.single-page .shop-hero-photo {
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 239, 224, .42);
+  border-radius: 18px;
+  background: #4a2819;
+  box-shadow:
+    0 24px 55px rgba(35, 15, 7, .28),
+    0 5px 16px rgba(35, 15, 7, .16);
+  transform: translateZ(0);
+}
+
+.single-page .shop-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(30, 18, 12, .02) 48%, rgba(30, 18, 12, .48) 100%),
+    linear-gradient(115deg, rgba(110, 48, 17, .12), transparent 58%);
+}
+
+.single-page .shop-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  filter: saturate(1.08) contrast(1.04) brightness(.96);
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s ease;
+}
+
+.single-page .shop-hero-photo:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.14) contrast(1.06) brightness(1);
+}
+
+.single-page .hero-photo-label {
+  z-index: 2;
+  left: 18px;
+  bottom: 18px;
+  max-width: calc(100% - 36px);
+  padding: 13px 17px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 10px;
+  background: rgba(255, 241, 229, .93);
+  box-shadow: 0 10px 28px rgba(24, 12, 6, .2);
+  backdrop-filter: blur(10px);
+}
+
+.single-page .hero-photo-label strong {
+  color: #71300f;
+  letter-spacing: .01em;
+}
+
+.single-page .hero-photo-label span {
+  color: #604536;
+  line-height: 1.45;
+}
+
+@media (max-width: 800px) {
+  .single-page .shop-hero-photo {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 230px;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-page .shop-hero-photo {
+    aspect-ratio: 5 / 4;
+    min-height: 210px;
+    border-radius: 14px;
+  }
+
+  .single-page .hero-photo-label {
+    left: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .single-page .hero-photo-label strong {
+    font-size: 19px;
+  }
+
+  .single-page .hero-photo-label span {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .single-page .shop-hero-photo img {
+    transition: none;
+  }
+
+  .single-page .shop-hero-photo:hover img {
+    transform: none;
+  }
+}
