@@ -98,14 +98,36 @@
   </section>
 
   <section class="single-section" id="galeri">
-    <div class="single-heading"><span class="shop-kicker">05 / GALERI</span><h2>Perjalanan dari limbah menjadi produk.</h2><p>Gambar di bawah merupakan ilustrasi. Dokumentasi foto asli kegiatan dan produk dapat ditambahkan untuk menggantikannya.</p></div>
-    <div class="single-gallery">
-      <figure><img src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi bahan alami" loading="lazy"><figcaption>01 · Bahan baku</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi kegiatan pengolahan" loading="lazy"><figcaption>02 · Proses pengolahan</figcaption></figure>
-      <figure><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi sumber daya alam" loading="lazy"><figcaption>03 · Potensi sumber daya</figcaption></figure>
+    <div class="single-heading"><span class="shop-kicker">05 / GALERI DOKUMENTASI</span><h2>Perjalanan EcoBriq di Desa Beririjarak.</h2><p>Ruang dokumentasi kegiatan KKN Kelompok 28, mulai dari pengenalan bahan, proses pengolahan, hingga hasil produk. Foto saat ini masih berupa ilustrasi dan akan diganti dengan dokumentasi asli kegiatan.</p></div>
+    <div class="single-gallery ecobriq-gallery">
+      <figure>
+        <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=1400&q=85" data-caption="01 · Pengenalan bahan baku">
+          <img src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi bahan alami sebagai pengenalan bahan baku" loading="lazy">
+          <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+        </button>
+        <figcaption>01 · Pengenalan bahan baku <small>Ilustrasi — ganti dengan foto kegiatan</small></figcaption>
+      </figure>
+      <figure>
+        <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=85" data-caption="02 · Proses pengolahan">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi kegiatan pengolahan" loading="lazy">
+          <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+        </button>
+        <figcaption>02 · Proses pengolahan <small>Ilustrasi — ganti dengan foto kegiatan</small></figcaption>
+      </figure>
+      <figure>
+        <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1400&q=85" data-caption="03 · Potensi sumber daya">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi sumber daya alam" loading="lazy">
+          <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+        </button>
+        <figcaption>03 · Potensi sumber daya <small>Ilustrasi — ganti dengan foto kegiatan</small></figcaption>
+      </figure>
     </div>
+    <dialog class="gallery-lightbox" aria-label="Pratinjau foto galeri">
+      <button class="gallery-close" type="button" aria-label="Tutup foto">×</button>
+      <img class="gallery-lightbox-image" src="" alt="">
+      <p class="gallery-lightbox-caption"></p>
+    </dialog>
   </section>
-
   <section class="single-section single-tinted" id="pengembang">
     <div class="single-heading"><span class="shop-kicker">06 / TENTANG PENGEMBANG</span><h2>Kenali proyek EcoBriq.</h2><p>Website ini dikembangkan sebagai media informasi dan edukasi mengenai pemanfaatan limbah baglog jamur menjadi briket, termasuk pengenalan produk, dampak, tutorial, katalog, dan dokumentasi.</p></div>
     <div class="developer-card"><span aria-hidden="true">🌱</span><div><h3>Sri Wahyuni</h3><p>Mahasiswa Kelompok 28, KKN Fakultas Teknik, Universitas Hamzanwadi.</p><p>Melalui kegiatan KKN di Desa Beririjarak, Kecamatan Wanasaba, Kabupaten Lombok Timur, saya mengembangkan website EcoBriq sebagai media informasi dan edukasi pemanfaatan limbah baglog jamur menjadi briket.</p></div></div>
@@ -139,6 +161,31 @@
     }, { rootMargin: '-18% 0px -65% 0px', threshold: [0, 0.15, 0.35, 0.6] });
 
     sections.forEach((section) => activeObserver.observe(section));
+  }
+
+  // Pratinjau foto galeri dengan dialog native yang dapat ditutup via Escape.
+  const gallery = document.querySelector('.ecobriq-gallery');
+  const lightbox = document.querySelector('.gallery-lightbox');
+  if (gallery && lightbox) {
+    const preview = lightbox.querySelector('.gallery-lightbox-image');
+    const caption = lightbox.querySelector('.gallery-lightbox-caption');
+    const closeButton = lightbox.querySelector('.gallery-close');
+
+    gallery.addEventListener('click', (event) => {
+      const trigger = event.target.closest('.gallery-open');
+      if (!trigger) return;
+      const image = trigger.querySelector('img');
+      preview.src = trigger.dataset.fullImage;
+      preview.alt = image?.alt || 'Foto dokumentasi EcoBriq';
+      caption.textContent = trigger.dataset.caption || '';
+      lightbox.showModal();
+    });
+
+    closeButton.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('close', () => { preview.removeAttribute('src'); });
   }
 
   // Animasi reveal tidak menghalangi navigasi atau konten saat gerakan dikurangi.
