@@ -1060,3 +1060,15 @@ button, input, textarea, select {
  .single-page .home-nav nav a { font-size:11px; }
  .single-page .single-section { padding-left:20px; padding-right:20px; }
 }
+
+
+/* ===== PROGRAM KKN ECOBRIQ ===== */
+.single-page .program-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.single-page .program-card { display:flex; align-items:flex-start; gap:15px; padding:22px; border:1px solid #51463f; border-radius:10px; background:#353535; }
+.single-page .program-number { display:grid; place-items:center; flex:0 0 42px; height:42px; border-radius:8px; background:#514238; color:#f0c6a8; font-weight:800; }
+.single-page .program-card h3 { margin:5px 0 12px; color:#fff; font-size:18px; }
+.single-page .program-card ul { padding-left:18px; color:#d1cbc5; font-size:13px; }
+.single-page .program-card li { margin:0 0 9px; }
+.single-page .program-note { max-width:920px; margin:22px auto 0; padding:16px 18px; border-left:4px solid #d9bca7; background:#38332f; color:#ddd2c9; font-size:13px; }
+.single-page .program-note strong { color:#f0c6a8; }
+@media(max-width:800px) { .single-page .program-grid { grid-template-columns:1fr; } }
