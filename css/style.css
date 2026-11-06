@@ -1504,7 +1504,7 @@ button, input, textarea, select {
     max-width: 100%;
 }
 
-.single-page .single-page *,
+.single-page *,
 .single-page img {
     max-width: 100%;
 }
