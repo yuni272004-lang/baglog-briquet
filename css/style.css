@@ -1444,3 +1444,41 @@ button, input, textarea, select {
     place-items: center;
 }
 
+
+
+/* ===== TOMBOL KEMBALI KE ATAS ===== */
+.single-page .back-to-top {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(23, 62, 41, .24);
+  font: inherit;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.single-page .back-to-top:hover {
+  background: var(--green);
+  transform: translateY(-3px);
+}
+.single-page .back-to-top:focus-visible {
+  outline: 3px solid #d99b72;
+  outline-offset: 3px;
+}
+.single-page .back-to-top[hidden] {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .single-page .back-to-top { transition: none; }
+}
