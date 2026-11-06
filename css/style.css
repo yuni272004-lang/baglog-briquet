@@ -1283,3 +1283,63 @@ button, input, textarea, select {
 @media (prefers-reduced-motion: reduce) {
   .single-page .gallery-zoom { transition:none; }
 }
+
+
+/* ===== NAVIGASI MOBILE: MENU HORIZONTAL YANG MUDAH DIJELAJAHI ===== */
+@media (max-width: 800px) {
+  .single-page .home-nav {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 18px 10px;
+  }
+
+  .single-page .home-nav .logo {
+    align-self: flex-start;
+  }
+
+  .single-page .home-nav nav {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 2px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #8f7765 #38332f;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .single-page .home-nav nav a {
+    flex: 0 0 auto;
+    padding: 5px 0;
+    font-size: 12px;
+  }
+
+  .single-page .home-nav nav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .single-page .home-nav nav::-webkit-scrollbar-track {
+    background: #38332f;
+    border-radius: 99px;
+  }
+
+  .single-page .home-nav nav::-webkit-scrollbar-thumb {
+    background: #8f7765;
+    border-radius: 99px;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-page .home-nav {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .single-page .home-nav nav {
+    gap: 8px 16px;
+  }
+}
