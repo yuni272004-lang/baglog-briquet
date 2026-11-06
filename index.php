@@ -30,7 +30,10 @@
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#menu">
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Buka atau tutup navigasi">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -892,6 +895,9 @@
     </div>
 </footer>
 
+
+<!-- Bootstrap JavaScript: diperlukan untuk tombol menu responsif. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
 <!-- Bootstrap JavaScript -->
 <script>
