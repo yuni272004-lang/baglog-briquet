@@ -1343,3 +1343,104 @@ button, input, textarea, select {
     gap: 8px 16px;
   }
 }
+
+/* ===== AUDIT RESPONSIF: NAVIGASI PHP, CTA, DAN TARGET SENTUH ===== */
+@media (max-width: 991.98px) {
+    /* Navbar halaman PHP tetap berada dalam lebar viewport pada ponsel/tablet. */
+    .navbar.navbar-expand-lg {
+        width: 100%;
+        margin: 0;
+        padding: 12px 16px;
+        border-radius: 0;
+    }
+
+    .navbar.navbar-expand-lg > .container {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+    }
+
+    /* Navigasi halaman turunan PHP: tautan membungkus, bukan memaksa overflow. */
+    .navbar.navbar-expand-lg > .container > .navbar-nav {
+        display: flex;
+        flex: 1 0 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 4px 12px;
+        width: 100%;
+        margin: 8px 0 0 !important;
+    }
+
+    .navbar.navbar-expand-lg > .container > .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 6px 2px;
+    }
+
+    /* Beranda PHP memakai menu collapse Bootstrap. */
+    .navbar.navbar-expand-lg > .container > .navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .navbar.navbar-expand-lg .navbar-collapse .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .navbar.navbar-expand-lg .navbar-collapse form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        margin: 10px 0 4px !important;
+    }
+
+    .navbar.navbar-expand-lg .navbar-collapse form .form-control {
+        flex: 1 1 160px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar.navbar-expand-lg {
+        padding: 10px 12px;
+    }
+
+    .navbar.navbar-expand-lg .navbar-brand {
+        max-width: calc(100% - 68px);
+        overflow-wrap: anywhere;
+        white-space: normal;
+        font-size: clamp(14px, 4vw, 18px);
+    }
+
+    .navbar.navbar-expand-lg .navbar-toggler {
+        flex: 0 0 auto;
+        padding: 6px 9px;
+    }
+
+    .single-page .catalog-card .btn-whatsapp {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
+/* Target sentuh minimal 44px untuk kontrol yang paling sering digunakan. */
+.single-page .ecobriq-faq summary {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+}
+
+.single-page .gallery-close {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+}
+
