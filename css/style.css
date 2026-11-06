@@ -1197,3 +1197,34 @@ button, input, textarea, select {
         animation: none !important;
     }
 }
+
+/* ===== AKSESIBILITAS NAVIGASI & PENANDA BAGIAN AKTIF ===== */
+.skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #f0c6a8;
+    color: #242424;
+    font-weight: 700;
+    transform: translateY(-160%);
+    transition: transform .2s ease;
+}
+.skip-link:focus {
+    transform: translateY(0);
+}
+.single-page .home-nav nav a.active,
+.single-page .home-nav nav a[aria-current="location"] {
+    color: #f0c6a8;
+    font-weight: 800;
+}
+.single-page .home-nav nav a.active::after,
+.single-page .home-nav nav a[aria-current="location"]::after {
+    right: 0;
+}
+#konten-utama:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+    .skip-link { transition: none; }
+}
