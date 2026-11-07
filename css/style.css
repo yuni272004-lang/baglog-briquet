@@ -1851,3 +1851,28 @@ button, input, textarea, select {
     transform: none;
   }
 }
+
+
+/* ===== AUDIT RESPONSIF: TARGET SENTUH & GALERI PADA PERANGKAT SENTUH ===== */
+@media (max-width: 900px) {
+    .navbar nav a,
+    .navbar > a:not(.logo) {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 8px 4px;
+    }
+
+    .single-page .home-nav nav a {
+        min-height: 44px;
+        padding: 8px 4px;
+    }
+}
+
+/* Tampilkan petunjuk perbesar foto pada layar sentuh yang tidak memiliki hover. */
+@media (hover: none) {
+    .single-page .gallery-zoom {
+        opacity: 1;
+        transform: none;
+    }
+}
