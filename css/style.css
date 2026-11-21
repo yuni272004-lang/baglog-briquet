@@ -1876,3 +1876,45 @@ button, input, textarea, select {
         transform: none;
     }
 }
+
+
+/* ===== NAVIGASI MOBILE: SATU BARIS YANG DAPAT DIGESER ===== */
+@media (max-width: 800px) {
+    .single-page .home-nav {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .single-page .home-nav nav {
+        order: 3;
+        display: flex;
+        flex: 0 0 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px 18px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 2px 2px 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scroll-snap-type: x proximity;
+    }
+
+    .single-page .home-nav nav a {
+        flex: 0 0 auto;
+        min-height: 44px;
+        padding: 8px 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .single-page .home-nav {
+        padding: 10px 16px 4px;
+    }
+
+    .single-page .home-nav nav {
+        gap: 6px 16px;
+    }
+}
