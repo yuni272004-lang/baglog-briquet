@@ -1918,3 +1918,116 @@ button, input, textarea, select {
         gap: 6px 16px;
     }
 }
+
+
+/* ===== PENYEMPURNAAN RESPONSIF HALAMAN ARTIKEL ===== */
+/* Berlaku untuk halaman artikel HTML; beranda single-page tetap tidak tersentuh. */
+body:not(.single-page) main,
+body:not(.single-page) main > section,
+body:not(.single-page) .article-page,
+body:not(.single-page) .contact-grid,
+body:not(.single-page) .contact-note {
+    min-width: 0;
+}
+
+body:not(.single-page) .article-page {
+    width: min(100% - 40px, 850px);
+    margin: clamp(28px, 6vw, 60px) auto;
+    padding: 0;
+}
+
+body:not(.single-page) .article-page h1 {
+    color: var(--green-dark);
+    overflow-wrap: break-word;
+}
+
+body:not(.single-page) .article-page h2,
+body:not(.single-page) .article-page .back-link {
+    color: var(--green);
+}
+
+body:not(.single-page) .article-page .article-meta,
+body:not(.single-page) .article-page p,
+body:not(.single-page) .article-page li {
+    color: var(--text);
+}
+
+body:not(.single-page) .article-page .article-cover {
+    font-size: clamp(42px, 9vw, 70px);
+}
+
+body:not(.single-page) .container {
+    width: min(100% - 48px, 1100px);
+    margin-inline: auto;
+}
+
+body:not(.single-page) .container > .section {
+    padding-block: clamp(28px, 5vw, 56px);
+}
+
+body:not(.single-page) .section .article-grid {
+    padding: 18px 0 28px;
+}
+
+body:not(.single-page) .contact-card,
+body:not(.single-page) .article-card,
+body:not(.single-page) .process-step {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+body:not(.single-page) .contact-card a {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    body:not(.single-page) .article-page {
+        width: calc(100% - 32px);
+        margin: 28px auto 42px;
+    }
+
+    body:not(.single-page) .article-page h1 {
+        font-size: clamp(29px, 8vw, 36px);
+        line-height: 1.18;
+    }
+
+    body:not(.single-page) .article-page .article-cover {
+        padding: 30px 14px;
+        margin-bottom: 24px;
+        border-radius: 12px;
+    }
+
+    body:not(.single-page) .container {
+        width: calc(100% - 32px);
+    }
+
+    body:not(.single-page) .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin: 24px 16px;
+    }
+
+    body:not(.single-page) .contact-card,
+    body:not(.single-page) .contact-note {
+        padding: 20px;
+    }
+
+    body:not(.single-page) .process-step {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 360px) {
+    body:not(.single-page) .article-page {
+        width: calc(100% - 24px);
+    }
+
+    body:not(.single-page) .container {
+        width: calc(100% - 24px);
+    }
+
+    body:not(.single-page) .process-step {
+        gap: 10px;
+        padding: 16px;
+    }
+}
