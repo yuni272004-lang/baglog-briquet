@@ -1,339 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-        name="description"
-        content="Galeri EcoBriq: dokumentasi bahan baku, proses pengolahan, dan hasil briket dari limbah baglog jamur."
-    >
-    <title>Galeri | EcoBriq</title>
-    <link rel="stylesheet" href="../css/style.css">
-
-    <style>
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .gallery-card {
-            overflow: hidden;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-        }
-
-        .gallery-card-image {
-            display: block;
-            width: 100%;
-            padding: 0;
-            border: 0;
-            background: transparent;
-            cursor: zoom-in;
-            text-align: left;
-        }
-
-        .gallery-card-image img,
-        .gallery-card video {
-            display: block;
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            background: #17251c;
-        }
-
-        .gallery-card-image img {
-            transition: transform 220ms ease;
-        }
-
-        .gallery-card-image:hover img {
-            transform: scale(1.035);
-        }
-
-        .gallery-card-image:focus-visible {
-            outline: 3px solid #245c3b;
-            outline-offset: -3px;
-        }
-
-        .gallery-lightbox {
-            width: min(92vw, 960px);
-            max-width: 92vw;
-            max-height: 90vh;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,.2);
-            border-radius: 16px;
-            background: #17251c;
-            color: #fff;
-        }
-
-        .gallery-lightbox::backdrop {
-            background: rgba(0,0,0,.82);
-        }
-
-        .gallery-lightbox img {
-            display: block;
-            width: 100%;
-            max-height: 72vh;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .gallery-lightbox p {
-            margin: 12px 48px 0 0;
-            color: #fff;
-        }
-
-        .gallery-lightbox-close {
-            display: block;
-            margin: 0 0 12px auto;
-            min-width: 44px;
-            min-height: 44px;
-            border: 1px solid rgba(255,255,255,.5);
-            border-radius: 999px;
-            background: transparent;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .gallery-card-image img { transition: none; }
-        }
-
-        .gallery-card-content {
-            padding: 20px;
-            color: #24352a;
-        }
-
-        .gallery-card-content h3 {
-            color: #173e29;
-        }
-
-        .gallery-card-content p {
-            color: #536257;
-        }
-
-        .gallery-card h3 {
-            margin-top: 0;
-        }
-
-        .gallery-note {
-            margin-bottom: 40px;
-            padding: 20px;
-            border-radius: 12px;
-            background: #eaf5e8;
-        }
-
-        .gallery-note h3 {
-            margin-top: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Galeri dokumentasi EcoBriq: foto dan video penjemuran baglog jamur serta ilustrasi pendukung.">
+  <title>Galeri | EcoBriq</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .single-page .single-gallery video {
+      display:block;
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      background:#171717;
+    }
+    @media(max-width:800px) {
+      .single-page .single-gallery video { height:240px; }
+    }
+  </style>
 </head>
-<body>
-<a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
-    <header class="navbar">
-        <a href="../index.html" class="logo">🌱 EcoBriq</a>
+<body class="home-page single-page">
+  <a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
+  <header class="navbar home-nav">
+    <a class="logo" href="../index.html#beranda" aria-label="EcoBriq, ke beranda">🌱 EcoBriq</a>
+    <nav aria-label="Navigasi utama">
+      <a href="../index.html#produk">Produk</a>
+      <a href="../index.html#dampak">Dampak</a>
+      <a href="../index.html#program">Program KKN</a>
+      <a href="../index.html#tutorial">Tutorial</a>
+      <a href="../index.html#katalog">Katalog</a>
+      <a href="../index.html#galeri" aria-current="page">Galeri</a>
+      <a href="../index.html#pengembang">Pengembang</a>
+    </nav>
+  </header>
 
-        <nav aria-label="Navigasi utama">
-            <a href="../index.html#produk">Produk</a>
-            <a href="../index.html#dampak">Dampak</a>
-            <a href="../index.html#program">Program KKN</a>
-            <a href="../index.html#tutorial">Tutorial</a>
-            <a href="../index.html#katalog">Katalog</a>
-            <a href="../index.html#galeri">Galeri</a>
-            <a href="../index.html#pengembang">Pengembang</a>
-        </nav>
-    </header>
+  <main id="konten-utama" tabindex="-1">
+    <section class="shop-hero single-hero" id="beranda">
+      <div class="shop-hero-copy">
+        <span class="shop-kicker">DOKUMENTASI KEGIATAN · KKN KELOMPOK 28</span>
+        <h1>JEJAK KEGIATAN <em>EcoBriq.</em></h1>
+        <p>Melihat dokumentasi penjemuran baglog jamur dan perjalanan pengembangan program EcoBriq di Desa Beririjarak.</p>
+        <a class="shop-button" href="#galeri-dokumentasi">LIHAT GALERI <span>↓</span></a>
+      </div>
+      <div class="shop-hero-photo">
+        <img src="../briket-ecobriq.jpeg" alt="Briket EcoBriq sebagai produk pemanfaatan limbah baglog jamur">
+        <div class="hero-photo-label"><strong>EcoBriq</strong><span>Potensi baru dari limbah baglog jamur</span></div>
+      </div>
+    </section>
 
-    <main id="konten-utama" tabindex="-1">
-        <section class="hero">
-            <div class="hero-content">
-                <span class="label">📸 GALERI KEGIATAN</span>
-                <h1>Melihat Perjalanan <span>EcoBriq.</span></h1>
-                <p>
-                    Galeri ini menampilkan bahan baku, proses pengolahan,
-                    dan hasil briket dari pemanfaatan limbah baglog jamur.
-                </p>
-                <a href="../index.html" class="btn-primary">Kembali ke Beranda ↗</a>
-            </div>
+    <section class="single-section" id="galeri-dokumentasi">
+      <div class="single-heading">
+        <span class="shop-kicker">GALERI DOKUMENTASI</span>
+        <h2>Perjalanan EcoBriq di Desa Beririjarak.</h2>
+        <p>Foto dan video penjemuran baglog jamur merupakan dokumentasi asli kegiatan. Gambar lainnya diberi label ilustrasi pendukung agar tidak disalahartikan sebagai dokumentasi lapangan.</p>
+      </div>
 
-            <div class="hero-image">
-                <img
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=85"
-                    alt="Ilustrasi energi dan lingkungan"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </div>
-        </section>
+      <div class="single-gallery ecobriq-gallery">
+        <figure>
+          <button class="gallery-open" type="button" data-full-image="../assets/galeri/penjemuran-baglog.jpeg" data-caption="Dokumentasi asli kegiatan penjemuran baglog jamur">
+            <img src="../assets/galeri/penjemuran-baglog.jpeg" alt="Dokumentasi asli penjemuran baglog jamur di atas terpal" loading="lazy" decoding="async">
+            <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+          </button>
+          <figcaption>Penjemuran baglog jamur <small>Dokumentasi asli kegiatan EcoBriq</small></figcaption>
+        </figure>
 
-        <section class="container" aria-labelledby="gallery-title">
-            <div class="intro">
-                <div>
-                    <span class="section-label">DOKUMENTASI PRODUK</span>
-                    <h2 id="gallery-title">Galeri EcoBriq</h2>
-                </div>
-                <p>
-                    Dokumentasi kegiatan penjemuran baglog jamur ditampilkan
-                    menggunakan foto dan video asli. Kartu lain yang bertanda
-                    ilustrasi merupakan gambar pendukung, bukan dokumentasi kegiatan.
-                </p>
-            </div>
+        <figure>
+          <video controls preload="metadata" playsinline poster="../assets/galeri/penjemuran-baglog.jpeg" aria-label="Video dokumentasi penjemuran baglog jamur">
+            <source src="../assets/galeri/penjemuran-baglog.mp4" type="video/mp4">
+            Browser Anda belum mendukung pemutaran video.
+          </video>
+          <figcaption>Video penjemuran baglog <small>Dokumentasi asli kegiatan EcoBriq</small></figcaption>
+        </figure>
 
-            <div class="gallery-grid">
-                <article class="gallery-card">
-                    <button class="gallery-card-image" type="button"
-                        data-full-image="../assets/galeri/penjemuran-baglog.jpeg"
-                        data-caption="Dokumentasi asli kegiatan penjemuran baglog jamur"
-                        aria-label="Perbesar foto penjemuran baglog jamur">
-                        <img
-                            src="../assets/galeri/penjemuran-baglog.jpeg"
-                            alt="Dokumentasi penjemuran baglog jamur"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </button>
-                    <div class="gallery-card-content">
-                        <h3>Penjemuran Baglog Jamur</h3>
-                        <p>Dokumentasi asli kegiatan penjemuran baglog jamur dalam program EcoBriq.</p>
-                    </div>
-                </article>
+        <figure>
+          <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=1400&q=85" data-caption="Ilustrasi bahan alami">
+            <img src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi bahan alami" loading="lazy" decoding="async">
+            <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+          </button>
+          <figcaption>Bahan baku <small>Ilustrasi pendukung, bukan dokumentasi kegiatan</small></figcaption>
+        </figure>
 
-                <article class="gallery-card">
-                    <video controls preload="metadata" playsinline
-                        aria-label="Video dokumentasi penjemuran baglog jamur"
-                        poster="../assets/galeri/penjemuran-baglog.jpeg">
-                        <source src="../assets/galeri/penjemuran-baglog.mp4" type="video/mp4">
-                        Browser Anda belum mendukung pemutaran video.
-                    </video>
-                    <div class="gallery-card-content">
-                        <h3>Video Penjemuran Baglog</h3>
-                        <p>Video dokumentasi asli proses penjemuran baglog jamur.</p>
-                    </div>
-                </article>
+        <figure>
+          <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=85" data-caption="Ilustrasi proses pengolahan">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi proses pengolahan" loading="lazy" decoding="async">
+            <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+          </button>
+          <figcaption>Proses pengolahan <small>Ilustrasi pendukung, bukan dokumentasi kegiatan</small></figcaption>
+        </figure>
 
-                <article class="gallery-card">
-                    <button class="gallery-card-image" type="button"
-                        data-full-image="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=1400&q=85"
-                        data-caption="01. Bahan baku — ilustrasi bahan alami"
-                        aria-label="Perbesar ilustrasi bahan alami">
-                        <img
-                            src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=700&q=80"
-                            alt="Ilustrasi bahan alami"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </button>
-                    <div class="gallery-card-content">
-                        <h3>01. Bahan Baku</h3>
-                        <p>
-                            Mengenal sisa media budidaya jamur yang berpotensi
-                            dimanfaatkan kembali.
-                        </p>
-                    </div>
-                </article>
+        <figure>
+          <button class="gallery-open" type="button" data-full-image="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1400&q=85" data-caption="Ilustrasi energi dan bahan bakar">
+            <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=700&q=80" alt="Ilustrasi energi dan bahan bakar" loading="lazy" decoding="async">
+            <span class="gallery-zoom" aria-hidden="true">Perbesar foto ↗</span>
+          </button>
+          <figcaption>Ilustrasi energi <small>Ilustrasi pendukung, bukan dokumentasi kegiatan</small></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
 
-                <article class="gallery-card">
-                    <button class="gallery-card-image" type="button"
-                        data-full-image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=85"
-                        data-caption="02. Proses pengolahan — ilustrasi kegiatan"
-                        aria-label="Perbesar ilustrasi proses pengolahan">
-                        <img
-                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=80"
-                            alt="Ilustrasi kegiatan pengolahan"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </button>
-                    <div class="gallery-card-content">
-                        <h3>02. Proses Pengolahan</h3>
-                        <p>
-                            Dokumentasi persiapan bahan, pencampuran,
-                            dan pencetakan briket.
-                        </p>
-                    </div>
-                </article>
+  <footer class="footer">
+    <a href="../index.html#beranda" class="logo">🌱 EcoBriq</a>
+    <p>Informasi dan edukasi pemanfaatan limbah baglog jamur.</p>
+    <small>© 2026 EcoBriq · Inovasi berkelanjutan</small>
+  </footer>
 
-                <article class="gallery-card">
-                    <button class="gallery-card-image" type="button"
-                        data-full-image="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1400&q=85"
-                        data-caption="03. Hasil produk — ilustrasi energi dan bahan bakar"
-                        aria-label="Perbesar ilustrasi energi dan bahan bakar">
-                        <img
-                            src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=700&q=80"
-                            alt="Ilustrasi energi dan bahan bakar"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </button>
-                    <div class="gallery-card-content">
-                        <h3>03. Hasil Produk</h3>
-                        <p>
-                            Tempat untuk menampilkan foto briket yang sudah
-                            dibuat dan diuji.
-                        </p>
-                    </div>
-                </article>
-            </div>
+  <dialog class="gallery-lightbox" aria-label="Pratinjau foto galeri">
+    <button class="gallery-close" type="button" aria-label="Tutup foto">×</button>
+    <img class="gallery-lightbox-image" src="" alt="">
+    <p class="gallery-lightbox-caption"></p>
+  </dialog>
 
-            <aside class="gallery-note">
-                <h3>🌱 Dokumentasi Kegiatan EcoBriq</h3>
-                <p>
-                    Foto dan video penjemuran baglog di atas merupakan dokumentasi
-                    kegiatan. Ilustrasi pada kartu lainnya tetap diberi keterangan
-                    agar tidak disalahartikan sebagai foto kegiatan sebenarnya.
-                </p>
-            </aside>
-        </section>
-    </main>
+  <script>
+    (() => {
+      const gallery = document.querySelector(".ecobriq-gallery");
+      const dialog = document.querySelector(".gallery-lightbox");
+      if (!gallery || !dialog || typeof dialog.showModal !== "function") return;
 
-    <footer class="footer">
-        <a href="../index.html" class="logo">🌱 EcoBriq</a>
-        <p>Informasi dan promosi pemanfaatan limbah baglog jamur.</p>
-        <small>© 2026 EcoBriq. Inovasi untuk keberlanjutan.</small>
-    </footer>
+      const preview = dialog.querySelector(".gallery-lightbox-image");
+      const caption = dialog.querySelector(".gallery-lightbox-caption");
+      const closeButton = dialog.querySelector(".gallery-close");
 
-    <dialog class="gallery-lightbox" aria-label="Pratinjau gambar galeri">
-        <button class="gallery-lightbox-close" type="button" aria-label="Tutup pratinjau">×</button>
-        <img src="" alt="">
-        <p></p>
-    </dialog>
+      gallery.addEventListener("click", (event) => {
+        const button = event.target.closest(".gallery-open");
+        if (!button) return;
+        const image = button.querySelector("img");
+        if (!image) return;
+        preview.src = button.dataset.fullImage || image.src;
+        preview.alt = image.alt || "Foto galeri EcoBriq";
+        caption.textContent = button.dataset.caption || image.alt;
+        dialog.showModal();
+      });
 
-    <script>
-        (() => {
-            const dialog = document.querySelector(".gallery-lightbox");
-            const preview = dialog?.querySelector("img");
-            const caption = dialog?.querySelector("p");
-            const closeButton = dialog?.querySelector(".gallery-lightbox-close");
-
-            if (!dialog || !preview || !caption || !closeButton || typeof dialog.showModal !== "function") {
-                return;
-            }
-
-            document.querySelectorAll(".gallery-card-image[data-full-image]").forEach((button) => {
-                button.addEventListener("click", () => {
-                    const imageUrl = button.dataset.fullImage;
-                    if (!imageUrl) return;
-
-                    preview.src = imageUrl;
-                    preview.alt = button.querySelector("img")?.alt || "Gambar galeri EcoBriq";
-                    caption.textContent = button.dataset.caption || preview.alt;
-                    dialog.showModal();
-                });
-            });
-
-            closeButton.addEventListener("click", () => dialog.close());
-            dialog.addEventListener("click", (event) => {
-                if (event.target === dialog) dialog.close();
-            });
-            dialog.addEventListener("close", () => {
-                preview.removeAttribute("src");
-                preview.alt = "";
-                caption.textContent = "";
-            });
-        })();
-    </script>
+      closeButton.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener("close", () => {
+        preview.removeAttribute("src");
+        preview.alt = "";
+        caption.textContent = "";
+      });
+    })();
+  </script>
 </body>
 </html>
